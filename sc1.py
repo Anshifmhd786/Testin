@@ -178,14 +178,7 @@ if __name__ == "__main__":
     print(stytext)
     # auth_key = getpass.getpass("Enter your authorization key: ")
     # if __name__ == "__main__":
-    print("\033[36;1;3;4m>>> Contact - @ItsHarshX to Buy Script <<<\033[0m\n\n")
-    auth_key = input("\033[32;1mEnter your authorization key: \033[0m")
-    if validate_auth_key(auth_key):
-        __import__("os").system("CLS||clear")
-        asyncio.run(main())
-    else:
-        print(f"{Fore.RED}Invalid auth key!!\nExiting.....")
-
+    asyncio.run(main())
     # authMain = "M1L2P3O4I5U6Y7"
     
     # authinp = input("Enter the authorization key: ")
