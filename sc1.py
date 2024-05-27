@@ -67,7 +67,8 @@ async def send_last_message_to_groups(apps, timee, numtime):
         for i in range(numtime):
             try:
                 async for message in app.get_chat_history('me', limit=1):
-                    last_message = message.id
+                    if hasattr(message,"id"):
+                       last_message = message.id
                     break  # Break the loop after fetching the last message
             except Exception as e:
                 print(f"{Fore.RED}Failed to fetch last message: {e}")
