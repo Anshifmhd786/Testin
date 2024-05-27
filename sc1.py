@@ -51,6 +51,7 @@ async def get_chat_ids(app: Client):
     chat_ids = []
     chat_with_topic = {}
     async for dialog in app.get_dialogs():
+      if dialog.chat and dialog.top_message and dialog.top_message.topic:
         if dialog.chat.is_forum == True:
             chat_with_topic[dialog.chat.id]=dialog.top_message.topic.id
         chat_ids.append(dialog.chat.id)
