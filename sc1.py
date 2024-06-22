@@ -5,8 +5,8 @@ import requests
 import getpass
 import uuid
 init(autoreset=True)
-#import firebase_admin
-#from firebase_admin import credentials, firestore
+import firebase_admin
+from firebase_admin import credentials, firestore
 
 # Replace the following placeholders with your actual Firebase credentials
 firebase_credentials = {
@@ -23,9 +23,9 @@ firebase_credentials = {
     "universe_domain": "googleapis.com"
 }
 
-#cred = credentials.Certificate(firebase_credentials)
-#firebase_admin.initialize_app(cred)
-#db = firestore.client()
+cred = credentials.Certificate(firebase_credentials)
+firebase_admin.initialize_app(cred)
+db = firestore.client()
 
 def generate_auth_key():
     raise Exception('No authorization key provided. Please enter a valid key.')
@@ -189,5 +189,4 @@ if __name__ == "__main__":
     #     asyncio.run(main())
     # else:
     #     print(f"{Fore.RED}Invalid auth key!!\nExiting.....")
-
 
